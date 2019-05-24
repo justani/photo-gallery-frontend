@@ -1,7 +1,9 @@
 # photo-gallery-frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the frontend part of Photo Gallery app created in Ember Js. The data for the application is fetched using [photo-gallery](https://github.com/justani/photo-gallery) api created in PHP.
+
+The app uses bootstrap for designing and ember-simple-auth for authentication of user.
+The API model is created using Ember Data which made it easier to fetch data models for various routes.
 
 ## Prerequisites
 

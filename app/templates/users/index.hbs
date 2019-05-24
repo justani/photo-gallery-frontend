@@ -1,0 +1,32 @@
+<!-- <div>
+    Registered Users:
+    <ul>
+      {{#each this.model as |user|}}
+      	<li>User is:</li>
+        <li>Username: {{user.username}}</li>
+        <li>First name: {{user.first_name}}</li>
+        <li>Last name: {{user.last_name}}</li>
+        <li>Email: {{user.email}}</li>
+        <li>Gender: {{user.gender}}</li>
+        <li>Profile picture: {{user.profile_picture}}</li>
+        <img src={{user.profile_picture}}>
+      {{/each}}
+    </ul>
+</div>
+ -->
+{{#each this.model as |user|}}
+
+<div class="card mx-auto" style="align-content: center width: 24rem;">
+  <img class="card-img-top" src={{user.profile_picture}} alt="cover photo">
+  <div class="card-body">
+    <h3 class="card-title">{{user.first_name}} {{user.last_name}}</h3>
+    <h3 class="card-title">Email: {{user.email}}</h3>
+    <a href="#" class="btn btn-primary">Username: {{user.username}}</a>
+  </div>
+</div>
+<br/>
+<br/>
+{{/each}}
+
+
+{{outlet}}

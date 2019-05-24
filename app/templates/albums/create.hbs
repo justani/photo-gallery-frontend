@@ -1,0 +1,28 @@
+<div class="col-md-12">
+    <div class="modal-dialog" style="margin-bottom:0">
+        <div class="modal-content">
+            <!-- <div class="panel-heading">
+                <h2 class="panel-title">Sign Up</h2>
+            </div> -->
+            <div class="panel-body">
+            	{{#if errorMessage}}
+				    <p>{{errorMessage}}</p>
+				{{/if}}
+                <form role="form" {{action "createAlbum" on="submit"}}>
+                    <fieldset>
+                    	<label for="name">name</label>
+                        <div class="form-group">
+					    	{{input id='name' placeholder='Enter name' value=name class="form-control"}}
+                        </div>
+                    	<label for="description">Description</label>
+                        <div class="form-group">
+					    	{{input id='description' placeholder='Description' value=description class="form-control"}}
+                        </div>
+                        <button class="btn btn-sm btn-success" type="submit">Create</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{outlet}}

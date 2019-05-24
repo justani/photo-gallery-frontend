@@ -23,6 +23,17 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth-token'] = {
+    refreshAccessTokens: false,
+    serverTokenEndpoint: 'https://localhost/api/login', // Server endpoint to send authenticate request
+    tokenPropertyName: 'token', // Key in server response that contains the access token
+    headers: {}, // Headers to add to the,
+  };
+
+  // ENV['ember-simple-auth'] = {
+  //   authenticationRoute: 'index'
+  // }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

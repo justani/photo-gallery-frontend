@@ -1,0 +1,35 @@
+<!-- <div>
+{{#each this.model as |album|}}
+	<p>Name: {{album.name}}</p>
+	<p>Description: {{album.description}}</p>
+	<p>Created by: {{album.created_by}}</p>
+	<p>Cover photo: {{album.cover_photo}}</p>
+	<p>Photo count {{album.photo_count}}</p>
+	<p>Likes count {{album.likes_count}}</p>
+	<p>Created at {{album.created_at}}</p>
+{{/each}}
+</div> -->
+
+
+<!-- <div class="mx-auto w-50 p-3"> -->
+{{#each this.model as |album|}}
+<div class="card mx-auto" style="align-content: center width: 24rem;">
+  <img class="card-img-top" src={{album.cover_photo}} alt="cover photo">
+  <div class="card-body">
+    <h3 class="card-title">{{album.name}}</h3>
+    <p class="card-text">{{album.description}}</p>
+    {{#link-to 'albums.show' album.id}}
+    <button class="btn btn-primary">View Album</button>
+    {{/link-to}}
+    {{#link-to 'users.show' album.created_by}}
+    <button class="btn btn-primary">{{album.created_by}}</button>
+    {{/link-to}}
+  </div>
+</div>
+<br/>
+<br/>
+{{/each}}
+
+{{outlet}}
+
+

@@ -1,0 +1,57 @@
+{{#if session.isAuthenticated}}
+
+<p>You are already logged in. Go explore Albums {{session.data.currentUser.first_name}}</p>
+
+{{#link-to "albums.create"}}
+<button type="button" class="btn btn-primary btn-lg">Create album</button>
+{{/link-to}}
+
+{{#link-to "albums.user-albums" session.data.currentUser.username}}
+<button type="button" class="btn btn-primary btn-lg">My albums</button>
+{{/link-to}}
+
+{{#link-to "users.show" session.data.currentUser.username}}
+<button type="button" class="btn btn-primary btn-lg">My profile</button>
+{{/link-to}}
+
+
+<br/><br/>
+
+<form {{action "logout" on="submit"}}>
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-primary">Sign out</button>
+    </div>
+  </div>
+</form>
+
+
+{{else}}
+
+<div class="col-md-12">
+    <div class="modal-dialog" style="margin-bottom:0">
+        <div class="modal-content">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sign In</h3>
+            </div>
+            <div class="panel-body">
+                <form role="form" {{action "authenticate" on="submit"}}>
+                    <fieldset>
+                        <div class="form-group">
+					    	{{input id='username' placeholder='Enter Login' value=username class="form-control"}}
+                        </div>
+                        <div class="form-group">
+						    {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
+                        </div>
+                        <button class="btn btn-sm btn-success" type="submit">Login</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+{{/if}}
